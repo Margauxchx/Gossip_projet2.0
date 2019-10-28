@@ -1,0 +1,18 @@
+<br><br><h1> Bienvenue à toi</h1> <br>
+
+<p> Sur ce site tu peux trouver des potins sur les membres de THP. <br>N'hésites pas à en rajouter si tu en as en reserve.<br>
+Voila les gossips déjà dévoilés : </p><br>
+
+<% Gossip.all.each do |gossip| %>
+
+<div class="card">
+  <div class="card-header">
+    POTIN n°<%= gossip.id %>
+  </div><br><br>
+  <div class="card-body">
+    <h5 class="card-title">L'auteur : <%=  gossip.user.first_name%></h5>
+    <p class="card-text">Le titre : <%=  gossip.title%></p>
+    <a href="home/<%= gossip.id %>" class="btn btn-primary">Clique pour voir la page du potin </a> <br><br><br><hr/>
+  </div>
+</div>
+<% end %>
