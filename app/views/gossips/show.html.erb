@@ -21,13 +21,13 @@
   <%= link_to "Editer le gossip", edit_gossip_path(@gossip.id), class: "btn btn-primary" %> 
     
 
-  <a href="<%= gossip_path %>" class="btn btn-danger" data-confirm="Êtes-vous sur de vouloir supprimer ce gossip ?"
+  <a href= "<%= gossip_path(@gossip.id) %>" class="btn btn-danger" data-confirm="Êtes-vous sur de vouloir supprimer ce gossip ?"
   data-method="DELETE">Supprimer le gossip</a><br /><br />
 
  <h3>Ajouter un commentaire</h3>
 
 
-<form action='/gossip/<%=params['id']%>' method="POST">
+<form action= <%= root_path %> method="POST">
 <input type="hidden" name="authenticity_token" value=<%= form_authenticity_token %> >
 Commentaire : <input class="form-control" type="text" name="comment"><br />
   <input type="submit" class="btn btn-primary" value="Envoyer">
