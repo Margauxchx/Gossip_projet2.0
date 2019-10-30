@@ -5,6 +5,7 @@ class DynamicController < ApplicationController
   
   def user
     @user = User.find(params[:id])
+    @city = City.find(params[:id])
   end
 
 end

@@ -2,10 +2,15 @@
 
 
 
-  <p> Voici le profil de l'utilisateur <%= @user.first_name%><br/>
+  <p> Voici le profil de l'utilisateur <%= @user.first_name%><br/> <br>
+  Prénom : <%= @user.first_name%> <br>
+  Nom : <%= @user.last_name%> <br>
   Description : <%= @user.description %><br/>
   Age : <%= @user.age %><br/>
-  Email : <%= @user.email %><br/>
+  Email : <%= @user.email %> <br>
+  Ville : <%= @user.city.name %><br/><br> 
+    
+  <%= link_to "Page de la ville", city_path(@user.city.id), class: "btn btn-primary" %> <br><br><br><hr/><br><br><br><hr/>
   
   </p>
 

@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   get 'home/:id', to: 'dynamic#user', as: 'user'
   
   resources :gossips
+  resources :cities
 end
