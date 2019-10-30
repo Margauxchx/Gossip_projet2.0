@@ -24,6 +24,14 @@
   <a href= "<%= gossip_path(@gossip.id) %>" class="btn btn-danger" data-confirm="Êtes-vous sur de vouloir supprimer ce gossip ?"
   data-method="DELETE">Supprimer le gossip</a><br /><br />
 
+  <h3>Commentaires : </h3><br>
+
+    <p> <% @gossip.comments.each do |comment|%>
+    <%= comment.user.first_name %> : <br> <%= comment.content %><br> <br>
+    <%end%>
+    </p>    
+    
+    
  <h3>Ajouter un commentaire</h3>
 
 

@@ -32,6 +32,13 @@ end
     user_id: User.all.sample.id)
 end
 
+10.times do		
+	Comment.create!(
+      content: Faker::Movies::Hobbit.quote, 
+      user: User.all.sample, 
+      gossip: Gossip.all.sample)
+end
+
 10.times do
   tag = Tag.create!(
     title: Faker::Color.color_name )
