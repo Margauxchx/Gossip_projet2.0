@@ -1,9 +1,13 @@
 require 'faker'
 
 User.destroy_all
+ActiveRecord::Base.connection.reset_pk_sequence!('users')
 City.destroy_all
+ActiveRecord::Base.connection.reset_pk_sequence!('cities')
 Gossip.destroy_all
+ActiveRecord::Base.connection.reset_pk_sequence!('gossips')
 Tag.destroy_all
+ActiveRecord::Base.connection.reset_pk_sequence!('tags')
 
 10.times do 
   city = City.create!(

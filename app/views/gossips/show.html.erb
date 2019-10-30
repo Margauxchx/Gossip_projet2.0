@@ -7,7 +7,8 @@
   Créé le : <%= @gossip.created_at.strftime('%d/%m/%Y') %><br/>
   Le contenu du potin : <%= @gossip.content %><br><br>
 
-  <a class="btn btn-primary btn-sm" href="user/<%= @gossip.id %>" role="button"> Clique pour voir le profil de l'utilisateur </a><br><br>
-  
+  <%= link_to "Page de l'auteur", user_path, class: "btn btn-primary" %> <br><br><br><hr/><br><br><br><hr/>
+
   </p>
+
 
