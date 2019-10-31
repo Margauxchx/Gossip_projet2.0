@@ -23,29 +23,26 @@
         <li class="nav-item active">
           <%= link_to "Accueil", root_path, class:"nav-link" %>
         </li>
-        <li class="nav-item">
-          <%= link_to "S'enregistrer", new_user_path, class:"nav-link" %>
-        </li>
+        
         <li class="nav-item">
           <%= link_to "Team", team_path, class:"nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to  "Contact", contact_path, class:"nav-link" %>
         </li>
-        <li class="nav-item">
-          <%= link_to  "Login", new_session_path, class:"nav-link" %>
-        </li>
-        <li class="nav-item"><% if current_user %>
-          Vous êtes connecté au compte de <%= current_user.first_name %>.
-          <%= link_to "Log Out", logout_path %>
+        
+      </ul>
+      
+      <ul  class="navbar-nav ml-auto">
+        <% if current_user %>
+          <li class="nav-item"> Vous êtes connecté au compte de <%= current_user.first_name %></li>
+          <li class="nav-item"><%= link_to "Se déconnecter", logout_path, class:"nav-link" %></li>
 
-          <% else %>
-          <%= link_to "Sign Up", new_user_path %> or 
-          <%= link_to "Log In", new_session_path %>
+        <% else %>
+          <li class="nav-item"> <%= link_to "S'enregistrer", new_user_path,   class:"nav-link" %> </li>
+          <li class="nav-item"> <%= link_to "Se connecter", new_session_path, class:"nav-link" %> </li>
         <% end %>
-
-
-        </li>
+        
       </ul>
       </div>
     </nav>
