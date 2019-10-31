@@ -13,5 +13,6 @@ class User < ApplicationRecord
   validates :last_name, length: { maximum: 40 }
   
   validates :age, length: { maximum: 99 }
-  validates :description, presence: true
+  #validates :description, presence: true
+  has_secure_password
 end
