@@ -10,6 +10,4 @@ Rails.application.routes.draw do
   resources :comments
   resources :users, only:[:new,:create,:show]
   resources :sessions, only:[:new,:create,:destroy]
-  
-  get 'logout', to: 'sessions#destroy', as: 'logout'
 end
