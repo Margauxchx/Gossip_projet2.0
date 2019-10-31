@@ -17,13 +17,14 @@ class SessionsController < ApplicationController
     redirect_to root_path  
 
     else
-      flash.now[:alert] = 'Invalid email/password combination'
+      flash.now[:alert] = 'Email ou mot de passe invalide'
       render 'new'
     end
   end
   
   def destroy
-    
+    session[:user_id] = nil
+    redirect_to root_url, notice: "Logged out!"
     # Méthode qui récupère le potin concerné et le détruit en base
     # Une fois la suppression faite, on redirige généralement vers la méthode index (pour afficher la liste à jour)
   end

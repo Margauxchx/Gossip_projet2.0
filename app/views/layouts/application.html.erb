@@ -35,6 +35,17 @@
         <li class="nav-item">
           <%= link_to  "Login", new_session_path, class:"nav-link" %>
         </li>
+        <li class="nav-item"><% if current_user %>
+          Vous êtes connecté au compte de <%= current_user.first_name %>.
+          <%= link_to "Log Out", logout_path %>
+
+          <% else %>
+          <%= link_to "Sign Up", new_user_path %> or 
+          <%= link_to "Log In", new_session_path %>
+        <% end %>
+
+
+        </li>
       </ul>
       </div>
     </nav>
